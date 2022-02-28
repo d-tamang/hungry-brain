@@ -87,6 +87,9 @@ class Brain {
     }
   }
 
+  drawWinCounter() {
+  }
+
 }
 
 export default Brain;
