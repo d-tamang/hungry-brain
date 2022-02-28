@@ -25,17 +25,22 @@ const lCtx = lCanvas.getContext('2d');
 // }
 
 const mouth = new Mouth(lCtx, lCanvas, 0, 120);
-mouth.draw();
+// mouth.draw();
 
-document.addEventListener("keypress", moveMouth, false);
-function moveMouth(e) {
-  if (e.keyCode === 37) {
-    mouth.x -= 0.5;
-    mouth.draw();
+function keyDown(e) {
+  console.log('hit');
+  e.preventDefault();
+  if (e.key === 'ArrowRight' || e.key === 'Right') {
+    console.log(mouth);
+    mouth.x += 5;
+    console.log(mouth.x);
   }
-  if (e.keyCode === 39) {
-    mouth.x += 0.5;
+  if (e.key === 'ArrowLeft' || e.key === 'Left') {
+    mouth.x -= 5;
   }
+  mouth.update();
 }
+
+document.addEventListener("keydown", keyDown);
 
 // });
