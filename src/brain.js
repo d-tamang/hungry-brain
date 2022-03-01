@@ -2,8 +2,9 @@ class Brain {
   constructor(ctx, canvas) {
     this.ctx = ctx;
     this.canvas = canvas;
-    this.win = 0;
+    this.win = 7;
     this.livesLeft = 3;
+    this.answer;
 
     this.startImg = new Image();
     this.win1Img = new Image();
@@ -30,6 +31,7 @@ class Brain {
     this.win10Img.src = "./src/assets/images/win10.jpg";
 
     this.draw();
+    this.drawEquation();
     this.drawWinCounter();
     this.drawLivesCounter();
   }
@@ -37,65 +39,67 @@ class Brain {
   draw() {
     if (this.win === 0) {
       this.startImg.onload = () => {
-        this.ctx.drawImage(this.startImg, 70, 0, 270, 270)
+        this.ctx.drawImage(this.startImg, 70, 10, 260, 260)
       };
     }
     if (this.win === 1) {
       this.win1Img.onload = () => {
-        this.ctx.drawImage(this.win1Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win1Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 2) {
       this.win2Img.onload = () => {
-        this.ctx.drawImage(this.win2Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win2Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 3) {
       this.win3Img.onload = () => {
-        this.ctx.drawImage(this.win3Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win3Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 4) {
       this.win4Img.onload = () => {
-        this.ctx.drawImage(this.win4Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win4Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 5) {
       this.win5Img.onload = () => {
-        this.ctx.drawImage(this.win5Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win5Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 6) {
       this.win6Img.onload = () => {
-        this.ctx.drawImage(this.win6Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win6Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 7) {
       this.win7Img.onload = () => {
-        this.ctx.drawImage(this.win7Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win7Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 8) {
       this.win8Img.onload = () => {
-        this.ctx.drawImage(this.win8Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win8Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 9) {
       this.win9Img.onload = () => {
-        this.ctx.drawImage(this.win9Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win9Img, 70, 10, 260, 260)
       };
     }
     if (this.win === 10) {
       this.win10Img.onload = () => {
-        this.ctx.drawImage(this.win10Img, 65, 10, 170, 80)
+        this.ctx.drawImage(this.win10Img, 70, 10, 260, 260)
       };
     }
   }
 
   drawEquation () {
-    let num1 = Math.floor(Math.random() * 11);
+    let num1 = Math.floor(Math.random() * 11 + 1);
     let num2 = Math.floor(Math.random() * 11);
-    let answer = num1 + num2;
+    this.answer = num1 + num2;
+    this.ctx.font = "55px Rockwell";
+    this.ctx.fillText(`${num1} + ${num2}`, 130, 340)
   }
 
   drawWinCounter() {

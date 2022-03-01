@@ -8,7 +8,7 @@ class Number {
     this.vegImg.src = "./src/assets/images/veg.jpg"
     this.width = 70;
     this.height = 70;
-    this.num = Math.floor(Math.random() * 21);
+    this.num = Math.ceil(Math.random() * 21);
   }
 
   draw() {
