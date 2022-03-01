@@ -6,14 +6,14 @@ class Mouth {
     this.y = y;
     this.mouthImg = new Image();
     this.mouthImg.src = "./src/assets/images/mouth.jpg"
-    this.width = 30;
-    this.height = 20;
+    this.width = 80;
+    this.height = 80;
     this.update();
   }
 
   draw() {
     // this.mouthImg.onload = () => {
-    this.ctx.drawImage(this.mouthImg, this.x, this.y, this.width, this.height);
+    this.ctx.drawImage(this.mouthImg, this.x, this.y - this.height, this.width, this.height);
     // }
   }
 

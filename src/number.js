@@ -6,8 +6,8 @@ class Number {
     this.y = y;
     this.vegImg = new Image();
     this.vegImg.src = "./src/assets/images/veg.jpg"
-    this.width = 30;
-    this.height = 20;
+    this.width = 70;
+    this.height = 70;
     this.num = Math.floor(Math.random() * 21);
   }
 
@@ -18,13 +18,13 @@ class Number {
   // };
     this.ctx.clearRect(0, 0, this.canvas.width, this.y);
     this.ctx.drawImage(this.vegImg, this.x, this.y, this.width, this.height);
-    this.ctx.font = "12px Rockwell";
+    this.ctx.font = "35px Rockwell";
     this.ctx.textBaseline = "top";
-    this.ctx.fillText(`${this.num}`, this.x + 10, this.y + 6);
+    this.ctx.fillText(`${this.num}`, this.x + 10, this.y + 10);
   }
 
   update() {
-    this.y += 0.4
+    this.y += 1;
   }
 
   loop() {

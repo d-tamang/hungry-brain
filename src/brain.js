@@ -3,6 +3,7 @@ class Brain {
     this.ctx = ctx;
     this.canvas = canvas;
     this.win = 0;
+    this.livesLeft = 3;
 
     this.startImg = new Image();
     this.win1Img = new Image();
@@ -27,12 +28,16 @@ class Brain {
     this.win8Img.src = "./src/assets/images/win8.jpg";
     this.win9Img.src = "./src/assets/images/win9.jpg";
     this.win10Img.src = "./src/assets/images/win10.jpg";
+
+    this.draw();
+    this.drawWinCounter();
+    this.drawLivesCounter();
   }
 
   draw() {
     if (this.win === 0) {
       this.startImg.onload = () => {
-        this.ctx.drawImage(this.startImg, 65, 10, 170, 80)
+        this.ctx.drawImage(this.startImg, 70, 0, 270, 270)
       };
     }
     if (this.win === 1) {
@@ -87,7 +92,21 @@ class Brain {
     }
   }
 
+  drawEquation () {
+    let num1 = Math.floor(Math.random() * 11);
+    let num2 = Math.floor(Math.random() * 11);
+    let answer = num1 + num2;
+  }
+
   drawWinCounter() {
+    // this.ctx.fillStyle ='black';
+    this.ctx.font = "25px Rockwell";
+    this.ctx.fillText("Correct: " + `${this.win}`, 140, 400);
+  }
+
+  drawLivesCounter() {
+    this.ctx.font = "25px Rockwell";
+    this.ctx.fillText("Lives Left: " + `${this.livesLeft}`, 116, 440);
   }
 
 }
