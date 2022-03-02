@@ -1,8 +1,8 @@
 import Brain from "./brain";
 import Veg from "./veg";
 import Mouth from "./mouth";
-import WinGame from "./wingame";
-import GameOver from "./gameover";
+import GameWon from "./gamewon";
+import GameLost from "./gamelost";
 
 class Game {
   constructor(leftCtx, leftCanvas, rightCtx, rightCanvas) {
@@ -39,7 +39,7 @@ class Game {
           this.brain.win++;
             if (this.brain.win >= 10) {
               cancelAnimationFrame(animate);
-              return new WinGame(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
+              return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
             }
           this.brain.update();
         } 

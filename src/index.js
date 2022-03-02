@@ -1,6 +1,5 @@
 import Game from "./game";
 import Start from "./start";
-// import WinGame from "./wingame";
 
 document.addEventListener("DOMContentLoaded", () => {
   const audioButton = document.getElementById("audio-button");
@@ -44,6 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
   
     document.addEventListener("keydown", keyDown);
   })
-
-  // new WinGame(lCtx, lCanvas, rCtx, rCanvas);
 });

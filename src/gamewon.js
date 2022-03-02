@@ -1,4 +1,4 @@
-class WinGame {
+class GameWon {
   constructor(leftCtx, leftCanvas, rightCtx, rightCanvas) {
     this.lCtx = leftCtx;
     this.lCanvas = leftCanvas;
@@ -7,10 +7,10 @@ class WinGame {
     this.winGameImg = new Image();
     this.winGameImg.src = "./src/assets/images/wingame.jpg";
 
-    this.renderGameWon();
+    this.renderWinScreen();
   }
 
-  renderGameWon() {
+  renderWinScreen() {
     this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
     this.lCtx.font = "40px Rockwell";
@@ -23,4 +23,4 @@ class WinGame {
   }
 }
 
-export default WinGame;
+export default GameWon;

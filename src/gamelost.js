@@ -1,4 +1,4 @@
-class GameOver {
+class GameLost {
   constructor(leftCtx, leftCanvas, rightCtx, rightCanvas) {
     this.lCtx = leftCtx;
     this.lCanvas = leftCanvas;
@@ -7,10 +7,10 @@ class GameOver {
     this.loseImg = new Image();
     this.loseImg.src = "./src/assets/images/lose.jpg";
 
-    this.renderGameOver();
+    this.renderLoseScreen();
   }
 
-  renderGameOver() {
+  renderLoseScreen() {
     this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
     this.lCtx.font = "40px Rockwell";
@@ -23,4 +23,4 @@ class GameOver {
   }
 }
 
-export default GameOver;
+export default GameLost;
