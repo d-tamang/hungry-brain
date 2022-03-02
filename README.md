@@ -19,7 +19,7 @@ In addition, this project will include:
 
 ## Wireframe
 
-https://wireframe.cc/yvaTIS
+![](assets/wireframe.png)
 
 ## Technologies, Libraries, APIs
 

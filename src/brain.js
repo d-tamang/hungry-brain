@@ -5,7 +5,6 @@ class Brain {
     this.win = win;
     this.livesLeft = lives;
     this.answer;
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     this.startImg = new Image();
     this.win1Img = new Image();
@@ -17,7 +16,6 @@ class Brain {
     this.win7Img = new Image();
     this.win8Img = new Image();
     this.win9Img = new Image();
-    this.win10Img = new Image();
 
     this.startImg.src = "./src/assets/images/start.jpg";
     this.win1Img.src = "./src/assets/images/win1.jpg";
@@ -29,8 +27,8 @@ class Brain {
     this.win7Img.src = "./src/assets/images/win7.jpg";
     this.win8Img.src = "./src/assets/images/win8.jpg";
     this.win9Img.src = "./src/assets/images/win9.jpg";
-    this.win10Img.src = "./src/assets/images/win10.jpg";
 
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.update();
   }
 
@@ -87,7 +85,7 @@ class Brain {
     }
   }
 
-  drawEquation () {
+  drawEquation() {
     let num1 = Math.ceil(Math.random() * 5);
     let num2 = Math.ceil(Math.random() * 5);
     this.answer = num1 + num2;

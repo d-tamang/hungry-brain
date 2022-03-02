@@ -27,14 +27,14 @@ class Game {
     this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
     this.brain.update();
-    this.render();
+    this.play();
   }
 
-  render() {
+  play() {
+    this.mouth.update();
     this.veg1.update();
     this.veg2.update();
     this.veg3.update();
-    this.mouth.update();
     if (this.correctVegCaught(this.veg1) || this.correctVegCaught(this.veg2) || this.correctVegCaught(this.veg3)) {
       this.brainWinCount++;
       if (this.brainWinCount >= 10) {
@@ -43,15 +43,12 @@ class Game {
       }
       this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
     }
-    // if ((this.checkVegCaught(this.veg1) || this.checkVegCaught(this.veg2) || this.checkVegCaught(this.veg3)) === "wrong") {
-    //   this.brainLivesLeft--;
-    //   this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
-    // }
+  
     // if (this.wrongVegCaught(this.veg1) || this.wrongVegCaught(this.veg2) || this.wrongVegCaught(this.veg3)) {
     //   this.brainLivesLeft--;
     //   this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
     // }
-    const animate = requestAnimationFrame(this.render.bind(this));
+    const animate = requestAnimationFrame(this.play.bind(this));
   }
 
   correctVegCaught(veg) {

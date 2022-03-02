@@ -1,11 +1,12 @@
 import Game from "./game";
 import Start from "./start";
+// import WinGame from "./wingame";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const audioButton = document.getElementById("audio-button"); // 
+  const audioButton = document.getElementById("audio-button");
+  const audio = document.getElementById("music");
 
   audioButton.addEventListener("click", () => {
-    let audio = document.getElementById("music");
     if (audio.paused) {
       audio.play();
     } else {
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   new Start(lCtx, lCanvas, rCtx, rCanvas);
 
   rCanvas.addEventListener("click", () => {
+    audio.play();
+
     const game = new Game(lCtx, lCanvas, rCtx, rCanvas);
 
     function keyDown(e) {
@@ -41,4 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     document.addEventListener("keydown", keyDown);
   })
+
+  // new WinGame(lCtx, lCanvas, rCtx, rCanvas);
 });

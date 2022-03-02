@@ -18,7 +18,7 @@ class GameOver {
     this.lCtx.fillText("Click on Barry to", 50, 250);
     this.lCtx.fillText("try again", 150, 300);
     this.loseImg.onload = () => {
-      this.rCtx.drawImage(this.loseImg, 70, 10, 260, 260)
+      this.rCtx.drawImage(this.loseImg, 70, 50, 260, 260)
     };
   }
 }
