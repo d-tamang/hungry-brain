@@ -11,7 +11,7 @@ class Game {
     this.rCtx = rightCtx;
     this.rCanvas = rightCanvas;
     this.eatSound = new Audio();
-    this.eatSound.src = "eatsound.wav"
+    this.eatSound.src = "./src/assets/audio/eatsound.wav"
 
     let x = Math.ceil(Math.random() * this.lCanvas.width);
     this.veg1 = new Veg(this.lCtx, this.lCanvas, x, 0);

@@ -7,7 +7,7 @@ class GameLost {
     this.loseImg = new Image();
     this.loseImg.src = "./src/assets/images/lose.jpg";
     this.loseSound = new Audio();
-    this.loseSound.src = "losesound.wav"
+    this.loseSound.src = "./src/assets/audio/losesound.wav"
 
     this.renderLoseScreen();
   }

@@ -7,7 +7,7 @@ class GameWon {
     this.winGameImg = new Image();
     this.winGameImg.src = "./src/assets/images/wingame.jpg";
     this.winSound = new Audio();
-    this.winSound.src = "winsound.mp3"
+    this.winSound.src = "./src/assets/audio/winsound.mp3"
 
     this.renderWinScreen();
   }
