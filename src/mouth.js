@@ -6,9 +6,9 @@ class Mouth {
     this.y = y;
     this.mouthImg = new Image();
     this.mouthImg.src = "./src/assets/images/mouth.jpg"
-    this.width = 80;
-    this.height = 80;
-    this.update();
+    this.width = 70;
+    this.height = 70;
+    this.draw();
   }
 
   draw() {
@@ -18,10 +18,22 @@ class Mouth {
   }
 
   update() {
-    this.ctx.clearRect(0, this.canvas.height - this.height, this.canvas.width, this.height);
+    this.ctx.clearRect(0, this.canvas.height - this.height - 12, this.canvas.width, this.height);
     this.draw();
-    requestAnimationFrame(this.update.bind(this));
   }
+
+  moveLeft() {
+    if (this.x >= 5) {
+      this.x -= 15;
+    }
+  }
+
+  moveRight() {
+    if (this.x <= (this.canvas.width - this.width - 5)) {
+      this.x += 15;
+    }
+  }
+  
 }
 
 export default Mouth;

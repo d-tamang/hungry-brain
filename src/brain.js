@@ -1,10 +1,11 @@
 class Brain {
-  constructor(ctx, canvas) {
+  constructor(ctx, canvas, win, lives) {
     this.ctx = ctx;
     this.canvas = canvas;
-    this.win = 7;
-    this.livesLeft = 3;
+    this.win = win;
+    this.livesLeft = lives;
     this.answer;
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     this.startImg = new Image();
     this.win1Img = new Image();
@@ -30,13 +31,10 @@ class Brain {
     this.win9Img.src = "./src/assets/images/win9.jpg";
     this.win10Img.src = "./src/assets/images/win10.jpg";
 
-    this.draw();
-    this.drawEquation();
-    this.drawWinCounter();
-    this.drawLivesCounter();
+    this.update();
   }
 
-  draw() {
+  drawBrain() {
     if (this.win === 0) {
       this.startImg.onload = () => {
         this.ctx.drawImage(this.startImg, 70, 10, 260, 260)
@@ -87,16 +85,11 @@ class Brain {
         this.ctx.drawImage(this.win9Img, 70, 10, 260, 260)
       };
     }
-    if (this.win === 10) {
-      this.win10Img.onload = () => {
-        this.ctx.drawImage(this.win10Img, 70, 10, 260, 260)
-      };
-    }
   }
 
   drawEquation () {
-    let num1 = Math.floor(Math.random() * 11 + 1);
-    let num2 = Math.floor(Math.random() * 11);
+    let num1 = Math.ceil(Math.random() * 5);
+    let num2 = Math.ceil(Math.random() * 5);
     this.answer = num1 + num2;
     this.ctx.font = "55px Rockwell";
     this.ctx.fillText(`${num1} + ${num2}`, 130, 340)
@@ -113,6 +106,12 @@ class Brain {
     this.ctx.fillText("Lives Left: " + `${this.livesLeft}`, 116, 440);
   }
 
+  update() {
+    this.drawBrain();
+    this.drawEquation();
+    this.drawWinCounter();
+    this.drawLivesCounter();
+  }
 }
 
 export default Brain;
