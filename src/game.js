@@ -15,7 +15,7 @@ class Game {
     this.veg1 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg2 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg3 = new Veg(this.lCtx, this.lCanvas, x, 0);
-    this.mouth = new Mouth(this.lCtx, this.lCanvas, 0, this.lCanvas.height - 10);
+    this.mouth = new Mouth(this.lCtx, this.lCanvas, 5, this.lCanvas.height);
     this.brain = new Brain(this.rCtx, this.rCanvas, 0, 3);
     this.brainWinCount = 0;
     this.brainLivesLeft = 3;
@@ -35,12 +35,13 @@ class Game {
     this.veg1.update();
     this.veg2.update();
     this.veg3.update();
-    if (this.correctVegCaught(this.veg1) || this.correctVegCaught(this.veg2) || this.correctVegCaught(this.veg3)) {
+    // if (this.correctVegCaught(this.veg1) || this.correctVegCaught(this.veg2) || this.correctVegCaught(this.veg3)) {
+      if ((this.correctVegCaught(this.veg1) && !this.correctVegCaught(this.veg2) && !this.correctVegCaught(this.veg3)) || (!this.correctVegCaught(this.veg1) && this.correctVegCaught(this.veg2) && !this.correctVegCaught(this.veg3)) || (!this.correctVegCaught(this.veg1) && !this.correctVegCaught(this.veg2) && this.correctVegCaught(this.veg3))) {
       this.brainWinCount++;
-      if (this.brainWinCount >= 10) {
-        cancelAnimationFrame(animate);
-        return new WinGame(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
-      }
+      // if (this.brainWinCount >= 10) {
+      //   cancelAnimationFrame(animate);
+      //   return new WinGame(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
+      // }
       this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
     }
   
@@ -48,14 +49,14 @@ class Game {
     //   this.brainLivesLeft--;
     //   this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
     // }
-    const animate = requestAnimationFrame(this.play.bind(this));
+    /*const animate = */requestAnimationFrame(this.play.bind(this));
   }
 
   correctVegCaught(veg) {
     let vegX = veg.x + veg.width;
     let vegY = veg.y + veg.height;
     let mouthX = this.mouth.x + this.mouth.width;
-    let mouthY = this.mouth.y - this.mouth.height;
+    let mouthY = this.lCanvas.height - this.mouth.height - 10;
     if ((vegX >= this.mouth.x) && (veg.x <= mouthX) && (vegY >= mouthY) && (veg.num === this.brain.answer)) {
       return true;
     }

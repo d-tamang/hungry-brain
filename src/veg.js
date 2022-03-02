@@ -10,7 +10,6 @@ class Veg {
     this.width = 50;
     this.height = 50;
     this.num = Math.ceil(Math.random() * 11);
-    this.draw();
   }
 
   draw() {
@@ -24,19 +23,17 @@ class Veg {
     this.ctx.fillText(`${this.num}`, this.x + 10, this.y + 10);
   }
 
-  fall() {
-    this.y += 3;
-    let bottomOfVeg = this.y + this.height;
+  update() {
+    this.y += 2;
     if (this.y >= (this.canvas.height - 80)) {
-      this.y = 0;
-      this.x = Math.ceil(Math.random() * (this.canvas.width - this.width));
-      // this.num = Math.ceil(Math.random() * 11);
+      this.reset();
     }
+    this.draw();
   }
 
-  update() {
-    this.fall();
-    this.draw();
+  reset() {
+    this.x = Math.ceil(Math.random() * (this.canvas.width - this.width));
+    this.y = 0;
   }
 }
 

@@ -1,9 +1,9 @@
 class Brain {
-  constructor(ctx, canvas, win, lives) {
+  constructor(ctx, canvas, win, lose) {
     this.ctx = ctx;
     this.canvas = canvas;
     this.win = win;
-    this.livesLeft = lives;
+    this.livesLeft = lose;
     this.answer;
 
     this.startImg = new Image();
@@ -28,7 +28,6 @@ class Brain {
     this.win8Img.src = "./src/assets/images/win8.jpg";
     this.win9Img.src = "./src/assets/images/win9.jpg";
 
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.update();
   }
 
@@ -50,7 +49,7 @@ class Brain {
     }
     if (this.win === 3) {
       this.win3Img.onload = () => {
-        this.ctx.drawImage(this.win3Img, 70, 20, 260, 260)
+        this.ctx.drawImage(this.win3Img, 70, 20, 280, 240)
       };
     }
     if (this.win === 4) {
@@ -60,7 +59,7 @@ class Brain {
     }
     if (this.win === 5) {
       this.win5Img.onload = () => {
-        this.ctx.drawImage(this.win5Img, 70, 20, 260, 260)
+        this.ctx.drawImage(this.win5Img, 70, 20, 280, 240)
       };
     }
     if (this.win === 6) {
@@ -70,7 +69,7 @@ class Brain {
     }
     if (this.win === 7) {
       this.win7Img.onload = () => {
-        this.ctx.drawImage(this.win7Img, 70, 20, 260, 260)
+        this.ctx.drawImage(this.win7Img, 70, 20, 250, 270)
       };
     }
     if (this.win === 8) {
@@ -104,6 +103,7 @@ class Brain {
   }
 
   update() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.drawBrain();
     this.drawEquation();
     this.drawWinCounter();
