@@ -37,16 +37,19 @@ class Game {
       if (this.collision(veg)) {
         if (veg.num === this.brain.answer) {
           this.brain.win++;
-            if (this.brain.win >= 10) {
-              cancelAnimationFrame(animate);
-              return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
-            }
           this.brain.update();
         } 
         // else {
-        //   this.brain.livesLeft--;
+        //   this.brain.health--;
+        //   // if (this.brain.livesLeft <= 0) {
+        //   //   cancelAnimationFrame(animate);
+        //   //   return new GameLost(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
+        //   // }
         //   this.brain.update();
-        // }
+      }
+      if (this.brain.win >= 3) {
+        cancelAnimationFrame(animate);
+        return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
       }
     }
     const animate = requestAnimationFrame(this.play.bind(this));
@@ -54,10 +57,10 @@ class Game {
 
   collision(veg) {
     let vegX = veg.x + veg.width;
-    let vegY = veg.y + 3;//veg.height;
+    let vegY = veg.y + veg.height;
     let mouthX = this.mouth.x + this.mouth.width;
-    let mouthY = this.lCanvas.height - this.mouth.height - 10;
-    if ((vegX >= this.mouth.x) && (veg.x <= mouthX) && (vegY >= mouthY)) {
+    // let mouthY = this.lCanvas.height - this.mouth.height - 10;
+    if ((vegX >= this.mouth.x) && (veg.x <= mouthX) && (vegY === 420)) {
       return true;
     }
   }

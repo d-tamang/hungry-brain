@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === 'ArrowLeft' || e.key === 'Left') {
         game.mouth.moveLeft();
       }
-      game.mouth.update();
     }
   
     document.addEventListener("keydown", keyDown);

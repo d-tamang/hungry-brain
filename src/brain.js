@@ -3,7 +3,7 @@ class Brain {
     this.ctx = ctx;
     this.canvas = canvas;
     this.win = 0;
-    this.livesLeft = 3;
+    this.health = 10;
     this.answer;
 
     this.startImg = new Image();
@@ -74,12 +74,12 @@ class Brain {
 
   drawWinCounter() {
     this.ctx.font = "25px Rockwell";
-    this.ctx.fillText("Correct: " + `${this.win}`, 140, 400);
+    this.ctx.fillText("Correct: " + `${this.win}`, 135, 400);
   }
 
-  drawLivesCounter() {
+  drawHealth() {
     this.ctx.font = "25px Rockwell";
-    this.ctx.fillText("Lives Left: " + `${this.livesLeft}`, 116, 440);
+    this.ctx.fillText("Health: " + `${this.health}`, 148, 440);
   }
 
   update() {
@@ -87,7 +87,7 @@ class Brain {
     this.drawBrain();
     this.drawEquation();
     this.drawWinCounter();
-    this.drawLivesCounter();
+    this.drawHealth();
   }
 }
 

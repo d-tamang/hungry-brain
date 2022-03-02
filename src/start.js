@@ -16,16 +16,14 @@ class Start {
     };
     this.lCtx.font = "24px Rockwell";
     this.rCtx.font = "35px Rockwell";
-    this.lCtx.fillText("Barry the Brilliant Brain is starving!", 40, 70);
-    this.lCtx.fillText("Can you help feed him brainfood so", 40, 110);
-    this.lCtx.fillText("he can get his energy back?", 40, 150);
-    this.lCtx.fillText("Answer these math problems!", 40, 210);
-    this.lCtx.fillText("Use the left and right arrow keys", 40, 270);
-    this.lCtx.fillText("to move his mouth and catch the", 40, 310);
-    this.lCtx.fillText("correct number. 10 right answers", 40, 350);
-    this.lCtx.fillText("and you win. But be careful, 3", 40, 390);
-    this.lCtx.fillText("wrong answers and it's game over!", 40, 430);
-    this.rCtx.fillText("Press here to start", 40, 400);
+    this.lCtx.fillText("Barry the Brilliant Brain is starving!", 40, 110);
+    this.lCtx.fillText("Help feed him brainfood by", 85, 150);
+    this.lCtx.fillText("answering these math problems.", 55, 190);
+    this.lCtx.fillText("Use the left and right arrow keys", 55, 280);
+    this.lCtx.fillText("to move his mouth. Catch 10", 80, 320);
+    this.lCtx.fillText("correct numbers before his health", 50, 360);
+    this.lCtx.fillText("runs out to win!", 150, 400);
+    this.rCtx.fillText("Press here to start", 45, 400);
   }
 }
 
