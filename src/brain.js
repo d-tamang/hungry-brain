@@ -37,52 +37,52 @@ class Brain {
   drawBrain() {
     if (this.win === 0) {
       this.startImg.onload = () => {
-        this.ctx.drawImage(this.startImg, 70, 10, 260, 260)
+        this.ctx.drawImage(this.startImg, 70, 20, 260, 260)
       };
     }
     if (this.win === 1) {
       this.win1Img.onload = () => {
-        this.ctx.drawImage(this.win1Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win1Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 2) {
       this.win2Img.onload = () => {
-        this.ctx.drawImage(this.win2Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win2Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 3) {
       this.win3Img.onload = () => {
-        this.ctx.drawImage(this.win3Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win3Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 4) {
       this.win4Img.onload = () => {
-        this.ctx.drawImage(this.win4Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win4Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 5) {
       this.win5Img.onload = () => {
-        this.ctx.drawImage(this.win5Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win5Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 6) {
       this.win6Img.onload = () => {
-        this.ctx.drawImage(this.win6Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win6Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 7) {
       this.win7Img.onload = () => {
-        this.ctx.drawImage(this.win7Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win7Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 8) {
       this.win8Img.onload = () => {
-        this.ctx.drawImage(this.win8Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win8Img, 70, 20, 260, 260)
       };
     }
     if (this.win === 9) {
       this.win9Img.onload = () => {
-        this.ctx.drawImage(this.win9Img, 70, 10, 260, 260)
+        this.ctx.drawImage(this.win9Img, 70, 20, 260, 260)
       };
     }
   }
@@ -96,7 +96,6 @@ class Brain {
   }
 
   drawWinCounter() {
-    // this.ctx.fillStyle ='black';
     this.ctx.font = "25px Rockwell";
     this.ctx.fillText("Correct: " + `${this.win}`, 140, 400);
   }

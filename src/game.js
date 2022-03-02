@@ -15,14 +15,18 @@ class Game {
     this.veg1 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg2 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg3 = new Veg(this.lCtx, this.lCanvas, x, 0);
-    this.veg4 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.mouth = new Mouth(this.lCtx, this.lCanvas, 0, this.lCanvas.height - 10);
     this.brain = new Brain(this.rCtx, this.rCanvas, 0, 3);
     this.brainWinCount = 0;
     this.brainLivesLeft = 3;
+
+    this.startGame();
   }
 
   startGame() {
+    this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
+    this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
+    this.brain.update();
     this.render();
   }
 

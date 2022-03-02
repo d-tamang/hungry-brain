@@ -4,11 +4,13 @@ class Veg {
     this.canvas = canvas;
     this.x = x;
     this.y = y;
+    this.vegPics = ["./src/assets/images/veg1.jpg", "./src/assets/images/veg2.jpg", "./src/assets/images/veg3.jpg", "./src/assets/images/veg4.jpg"]
     this.vegImg = new Image();
-    this.vegImg.src = "./src/assets/images/veg.jpg"
+    this.vegImg.src = this.vegPics[Math.floor(Math.random() * 4)]
     this.width = 50;
     this.height = 50;
     this.num = Math.ceil(Math.random() * 11);
+    this.draw();
   }
 
   draw() {
@@ -23,10 +25,11 @@ class Veg {
 
   fall() {
     this.y += 3;
-    if (this.y >= (this.canvas.height - 70)) {
+    let bottomOfVeg = this.y + this.height;
+    if (this.y >= (this.canvas.height - 80)) {
       this.y = 0;
       this.x = Math.ceil(Math.random() * (this.canvas.width - this.width));
-      this.num = Math.ceil(Math.random() * 11);
+      // this.num = Math.ceil(Math.random() * 11);
     }
   }
 

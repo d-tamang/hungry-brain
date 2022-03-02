@@ -1,6 +1,18 @@
 import Game from "./game";
+import Start from "./start";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const audioButton = document.getElementById("audio-button"); // 
+
+  audioButton.addEventListener("click", () => {
+    let audio = document.getElementById("music");
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  })
+
   const rCanvas = document.getElementById('right-canvas');
   rCanvas.width = 400;
   rCanvas.height = 500;
@@ -11,19 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
   lCanvas.height = 500;
   const lCtx = lCanvas.getContext('2d');
 
-  const game = new Game(lCtx, lCanvas, rCtx, rCanvas);
-  game.startGame();
+  new Start(lCtx, lCanvas, rCtx, rCanvas);
 
-  function keyDown(e) {
-    e.preventDefault();
-    if (e.key === 'ArrowRight' || e.key === 'Right') {
-      game.mouth.moveRight();
-    }
-    if (e.key === 'ArrowLeft' || e.key === 'Left') {
-      game.mouth.moveLeft();
-    }
-    game.mouth.update();
-  }
+  rCanvas.addEventListener("click", () => {
+    const game = new Game(lCtx, lCanvas, rCtx, rCanvas);
 
-  document.addEventListener("keydown", keyDown);
+    function keyDown(e) {
+      e.preventDefault();
+      if (e.key === 'ArrowRight' || e.key === 'Right') {
+        game.mouth.moveRight();
+      }
+      if (e.key === 'ArrowLeft' || e.key === 'Left') {
+        game.mouth.moveLeft();
+      }
+      game.mouth.update();
+    }
+  
+    document.addEventListener("keydown", keyDown);
+  })
 });
