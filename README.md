@@ -19,7 +19,7 @@ In addition, this project will include:
 
 ## Wireframe
 
-![](assets/wireframe.png)
+![](src/assets/images/wireframe.png)
 
 ## Technologies, Libraries, APIs
 
