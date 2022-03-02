@@ -14,26 +14,24 @@ class Veg {
 
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.y);
-    if (this.y === 0) {
-      this.num = Math.ceil(Math.random() * 11);
-    }
     this.ctx.drawImage(this.vegImg, this.x, this.y, this.width, this.height);
     this.ctx.font = "25px Rockwell";
     this.ctx.textBaseline = "top";
-    this.ctx.fillText(`${this.num}`, this.x + 10, this.y + 10);
+    this.ctx.fillText(`${this.num}`, this.x + 10, this.y + 15);
+  }
+
+  fall() {
+    this.y += 2;
   }
 
   update() {
-    this.y += 2;
-    if (this.y >= (this.canvas.height - 80)) {
-      this.reset();
+    this.fall();
+    if (this.y >= this.canvas.height - 80) {
+      this.x = Math.ceil(Math.random() * (this.canvas.width - this.width));
+      this.y = 0;
+      this.num = Math.ceil(Math.random() * 11);
     }
     this.draw();
-  }
-
-  reset() {
-    this.x = Math.ceil(Math.random() * (this.canvas.width - this.width));
-    this.y = 0;
   }
 }
 

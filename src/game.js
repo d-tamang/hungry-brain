@@ -15,15 +15,13 @@ class Game {
     this.veg1 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg2 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg3 = new Veg(this.lCtx, this.lCanvas, x, 0);
-    this.mouth = new Mouth(this.lCtx, this.lCanvas, 5, this.lCanvas.height);
-    this.brain = new Brain(this.rCtx, this.rCanvas, 0, 3);
-    this.brainWinCount = 0;
-    this.brainLivesLeft = 3;
+    this.mouth = new Mouth(this.lCtx, this.lCanvas, 10, this.lCanvas.height);
+    this.brain = new Brain(this.rCtx, this.rCanvas);
 
-    this.startGame();
+    this.setup();
   }
 
-  startGame() {
+  setup() {
     this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
     this.brain.update();
@@ -31,46 +29,38 @@ class Game {
   }
 
   play() {
-    this.mouth.update();
-    this.veg1.update();
-    this.veg2.update();
-    this.veg3.update();
-    // if (this.correctVegCaught(this.veg1) || this.correctVegCaught(this.veg2) || this.correctVegCaught(this.veg3)) {
-      if ((this.correctVegCaught(this.veg1) && !this.correctVegCaught(this.veg2) && !this.correctVegCaught(this.veg3)) || (!this.correctVegCaught(this.veg1) && this.correctVegCaught(this.veg2) && !this.correctVegCaught(this.veg3)) || (!this.correctVegCaught(this.veg1) && !this.correctVegCaught(this.veg2) && this.correctVegCaught(this.veg3))) {
-      this.brainWinCount++;
-      // if (this.brainWinCount >= 10) {
-      //   cancelAnimationFrame(animate);
-      //   return new WinGame(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
-      // }
-      this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
+    this.mouth.draw();
+    let veggies = [this.veg1, this.veg2, this.veg3]
+    for (let i = 0; i < veggies.length; i++) {
+      let veg = veggies[i];
+      veg.update();
+      if (this.collision(veg)) {
+        if (veg.num === this.brain.answer) {
+          this.brain.win++;
+            if (this.brain.win >= 10) {
+              cancelAnimationFrame(animate);
+              return new WinGame(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
+            }
+          this.brain.update();
+        } 
+        // else {
+        //   this.brain.livesLeft--;
+        //   this.brain.update();
+        // }
+      }
     }
-  
-    // if (this.wrongVegCaught(this.veg1) || this.wrongVegCaught(this.veg2) || this.wrongVegCaught(this.veg3)) {
-    //   this.brainLivesLeft--;
-    //   this.brain = new Brain(this.rCtx, this.rCanvas, this.brainWinCount, this.brainLivesLeft);
-    // }
-    /*const animate = */requestAnimationFrame(this.play.bind(this));
+    const animate = requestAnimationFrame(this.play.bind(this));
   }
 
-  correctVegCaught(veg) {
+  collision(veg) {
     let vegX = veg.x + veg.width;
-    let vegY = veg.y + veg.height;
+    let vegY = veg.y + 3;//veg.height;
     let mouthX = this.mouth.x + this.mouth.width;
     let mouthY = this.lCanvas.height - this.mouth.height - 10;
-    if ((vegX >= this.mouth.x) && (veg.x <= mouthX) && (vegY >= mouthY) && (veg.num === this.brain.answer)) {
+    if ((vegX >= this.mouth.x) && (veg.x <= mouthX) && (vegY >= mouthY)) {
       return true;
     }
   }
-
-  // wrongVegCaught(veg) {
-  //   let vegX = veg.x + veg.width;
-  //   let vegY = veg.y + veg.height;
-  //   let mouthX = this.mouth.x + this.mouth.width;
-  //   let mouthY = this.mouth.y - this.mouth.height;
-  //   if ((vegX >= this.mouth.x) && (veg.x <= mouthX) && (vegY >= mouthY) && (veg.num !== this.brain.answer)) {
-  //     return true;
-  //   }
-  // }
 }
 
 export default Game;

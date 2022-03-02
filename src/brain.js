@@ -1,9 +1,9 @@
 class Brain {
-  constructor(ctx, canvas, win, lose) {
+  constructor(ctx, canvas) {
     this.ctx = ctx;
     this.canvas = canvas;
-    this.win = win;
-    this.livesLeft = lose;
+    this.win = 0;
+    this.livesLeft = 3;
     this.answer;
 
     this.startImg = new Image();
@@ -27,8 +27,6 @@ class Brain {
     this.win7Img.src = "./src/assets/images/win7.jpg";
     this.win8Img.src = "./src/assets/images/win8.jpg";
     this.win9Img.src = "./src/assets/images/win9.jpg";
-
-    this.update();
   }
 
   drawBrain() {
@@ -38,49 +36,31 @@ class Brain {
       };
     }
     if (this.win === 1) {
-      this.win1Img.onload = () => {
-        this.ctx.drawImage(this.win1Img, 70, 20, 260, 260)
-      };
+      this.ctx.drawImage(this.win1Img, 70, 20, 260, 260)
     }
     if (this.win === 2) {
-      this.win2Img.onload = () => {
-        this.ctx.drawImage(this.win2Img, 70, 20, 260, 260)
-      };
+      this.ctx.drawImage(this.win2Img, 70, 20, 260, 260)
     }
     if (this.win === 3) {
-      this.win3Img.onload = () => {
-        this.ctx.drawImage(this.win3Img, 70, 20, 280, 240)
-      };
+      this.ctx.drawImage(this.win3Img, 70, 20, 280, 240)
     }
     if (this.win === 4) {
-      this.win4Img.onload = () => {
-        this.ctx.drawImage(this.win4Img, 70, 20, 260, 260)
-      };
+      this.ctx.drawImage(this.win4Img, 70, 20, 260, 260)
     }
     if (this.win === 5) {
-      this.win5Img.onload = () => {
-        this.ctx.drawImage(this.win5Img, 70, 20, 280, 240)
-      };
+      this.ctx.drawImage(this.win5Img, 70, 20, 280, 240)
     }
     if (this.win === 6) {
-      this.win6Img.onload = () => {
-        this.ctx.drawImage(this.win6Img, 70, 20, 260, 260)
-      };
+      this.ctx.drawImage(this.win6Img, 70, 20, 260, 260)
     }
     if (this.win === 7) {
-      this.win7Img.onload = () => {
-        this.ctx.drawImage(this.win7Img, 70, 20, 250, 270)
-      };
+      this.ctx.drawImage(this.win7Img, 70, 20, 250, 270)
     }
     if (this.win === 8) {
-      this.win8Img.onload = () => {
-        this.ctx.drawImage(this.win8Img, 70, 20, 260, 260)
-      };
+      this.ctx.drawImage(this.win8Img, 70, 20, 260, 260)
     }
     if (this.win === 9) {
-      this.win9Img.onload = () => {
-        this.ctx.drawImage(this.win9Img, 70, 20, 260, 260)
-      };
+      this.ctx.drawImage(this.win9Img, 70, 20, 260, 260)
     }
   }
 

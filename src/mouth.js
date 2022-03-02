@@ -11,26 +11,21 @@ class Mouth {
   }
 
   draw() {
+    this.ctx.clearRect(0, this.canvas.height - this.height - 10, this.canvas.width, this.height + 10);
     this.ctx.drawImage(this.mouthImg, this.x, this.y - this.height - 10, this.width, this.height);
   }
 
-  update() {
-    this.ctx.clearRect(0, this.canvas.height - this.height - 10, this.canvas.width, this.height + 10);
-    this.draw();
-  }
-
   moveLeft() {
-    if (this.x >= 5) {
+    if (this.x >= 10) {
       this.x -= 15;
     }
   }
 
   moveRight() {
-    if (this.x <= (this.canvas.width - this.width - 5)) {
+    if (this.x <= (this.canvas.width - this.width - 10)) {
       this.x += 15;
     }
   }
-  
 }
 
 export default Mouth;
