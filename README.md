@@ -6,9 +6,15 @@
 
 Hungry Brain is an addition math game for kids that helps enhance multitasking skills as users must focus on solving the equation whilst using the arrow keys to slide the mouth back and forth to both catch and avoid falling numbers. The objective is to "catch" the number that answers the equation on the right, wherein doing so will trigger a new problem to be randomly generated, and a new image of Brian the Brain to display. Correct answers increase points, and incorrect answers decrease health. Earn 10 points to win. Game is lost when the health counter reaches zero.
 
-## Demo
+## Demo GIF
 
 ![](./src/assets/images/demo.gif)
+
+## Code Snippet
+
+Main game logic occurs in the Game class play method.
+
+![](./src/assets/images/codesnippet.png)
 
 ## Technologies Implemented
 
