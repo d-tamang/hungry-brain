@@ -11,7 +11,7 @@ class Mouth {
   }
 
   draw() {
-    this.ctx.clearRect(0, this.canvas.height - this.height - 10, this.canvas.width, this.height + 10);
+    this.ctx.clearRect(0, this.canvas.height - this.height - 12, this.canvas.width, this.height + 10);
     this.ctx.drawImage(this.mouthImg, this.x, this.y - this.height - 10, this.width, this.height);
   }
 

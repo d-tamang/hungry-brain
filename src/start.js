@@ -18,7 +18,7 @@ class Start {
     this.rCtx.font = "35px Rockwell";
     this.lCtx.fillText("Barry the Brilliant Brain is starving!", 40, 110);
     this.lCtx.fillText("Help feed him brainfood by", 85, 150);
-    this.lCtx.fillText("answering these math problems.", 55, 190);
+    this.lCtx.fillText("solving these math problems.", 75, 190);
     this.lCtx.fillText("Use the left and right arrow keys", 55, 280);
     this.lCtx.fillText("to move his mouth. Catch 10", 80, 320);
     this.lCtx.fillText("correct numbers before his health", 50, 360);

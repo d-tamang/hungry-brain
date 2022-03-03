@@ -12,8 +12,8 @@ class Game {
     this.rCanvas = rightCanvas;
     this.eatSound = new Audio();
     this.eatSound.src = "./src/assets/audio/eatsound.wav"
-
-    let x = Math.ceil(Math.random() * this.lCanvas.width);
+    let positions = [20, 100, 180, 260, 340, 420]
+    let x = positions[Math.floor(Math.random() * positions.length)]
     this.veg1 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg2 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg3 = new Veg(this.lCtx, this.lCanvas, x, 0);
@@ -47,7 +47,7 @@ class Game {
           this.brain.drawHealth();
         }
       }
-      if (this.brain.win >= 2) {
+      if (this.brain.win >= 1) {
         cancelAnimationFrame(animate);
         return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
       }

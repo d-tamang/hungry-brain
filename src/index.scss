@@ -1,7 +1,14 @@
-#left-canvas, #right-canvas {
+#left-canvas {
   background-color: white;
-  border-radius: 25px;
-  border: 3px solid black;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 5px solid rgb(202, 226, 233);
+}
+
+#right-canvas {
+  background-color: white;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .boxes {
@@ -24,7 +31,7 @@ body {
 }
 
 #audio-button {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   padding-left: 15px;
 }
