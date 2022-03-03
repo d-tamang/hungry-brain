@@ -5,6 +5,7 @@ class Brain {
     this.win = 0;
     this.health = 10;
     this.answer;
+    this.answer2;
 
     this.startImg = new Image();
     this.win1Img = new Image();
