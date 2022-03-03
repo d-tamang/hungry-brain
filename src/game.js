@@ -47,7 +47,7 @@ class Game {
           this.brain.drawHealth();
         }
       }
-      if (this.brain.win >= 1) {
+      if (this.brain.win >= 5) {
         cancelAnimationFrame(animate);
         return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
       }

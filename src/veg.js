@@ -17,7 +17,7 @@ class Veg {
     this.ctx.drawImage(this.vegImg, this.x, this.y, this.width, this.height);
     this.ctx.font = "25px Rockwell";
     this.ctx.textBaseline = "top";
-    this.ctx.fillText(`${this.num}`, this.x + 10, this.y + 15);
+    this.ctx.fillText(`${this.num}`, this.x + 12, this.y + 15);
   }
 
   fall() {
