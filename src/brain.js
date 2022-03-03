@@ -3,7 +3,7 @@ class Brain {
     this.ctx = ctx;
     this.canvas = canvas;
     this.win = 0;
-    this.health = 10;
+    this.health = 5;
     this.answer;
     this.answer2;
 
