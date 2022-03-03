@@ -65,8 +65,8 @@ class Brain {
   }
 
   drawEquation() {
-    let num1 = Math.ceil(Math.random() * 5);
-    let num2 = Math.ceil(Math.random() * 5);
+    let num1 = Math.ceil(Math.random() * 50);
+    let num2 = Math.ceil(Math.random() * 50);
     this.answer = num1 + num2;
     this.ctx.font = "55px Rockwell";
     this.ctx.fillText(`${num1} + ${num2}`, 130, 340)

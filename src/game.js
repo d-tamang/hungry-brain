@@ -32,9 +32,12 @@ class Game {
 
   play() {
     this.mouth.draw();
-    let veggies = [this.veg1, this.veg2, this.veg3]
+    let veggies = [this.veg1, this.veg2, this.veg3];
     for (let i = 0; i < veggies.length; i++) {
       let veg = veggies[i];
+      if (i === 0) {
+        veg.num = this.brain.answer;
+      }
       veg.update();
       if (this.collision(veg)) {
         this.eatSound.play();

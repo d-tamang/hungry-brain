@@ -18,7 +18,7 @@ class GameWon {
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);
     this.lCtx.font = "40px Rockwell";
     this.lCtx.fillText("Congrats, you won!", 45, 170);
-    this.lCtx.fillText("Click on Barry to", 80, 250);
+    this.lCtx.fillText("Click on Brian to", 80, 250);
     this.lCtx.fillText("play again", 130, 300);
     this.winGameImg.onload = () => {
       this.rCtx.drawImage(this.winGameImg, 55, 80, 290, 290)
