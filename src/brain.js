@@ -42,7 +42,7 @@ class Brain {
       this.ctx.drawImage(this.win2Img, 70, 20, 260, 260)
     }
     if (this.win === 3) {
-      this.ctx.drawImage(this.win3Img, 70, 20, 280, 240)
+      this.ctx.drawImage(this.win3Img, 60, 20, 300, 240)
     }
     if (this.win === 4) {
       this.ctx.drawImage(this.win4Img, 70, 20, 260, 260)
@@ -74,12 +74,12 @@ class Brain {
 
   drawWinCounter() {
     this.ctx.font = "25px Rockwell";
-    this.ctx.fillText("Correct: " + `${this.win}`, 135, 400);
+    this.ctx.fillText("Points: " + `${this.win}`, 140, 400);
   }
 
   drawHealth() {
     this.ctx.font = "25px Rockwell";
-    this.ctx.fillText("Health: " + `${this.health}`, 148, 440);
+    this.ctx.fillText("Health: " + `${this.health}`, 135, 440);
   }
 
   update() {

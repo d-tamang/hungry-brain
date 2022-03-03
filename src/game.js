@@ -17,7 +17,7 @@ class Game {
     this.veg1 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg2 = new Veg(this.lCtx, this.lCanvas, x, 0);
     this.veg3 = new Veg(this.lCtx, this.lCanvas, x, 0);
-    this.mouth = new Mouth(this.lCtx, this.lCanvas, 10, this.lCanvas.height);
+    this.mouth = new Mouth(this.lCtx, this.lCanvas, 20, this.lCanvas.height);
     this.brain = new Brain(this.rCtx, this.rCanvas);
 
     this.setup();

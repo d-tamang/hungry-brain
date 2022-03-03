@@ -37,3 +37,7 @@ body {
   height: 60px;
   padding-left: 15px;
 }
+
+#created-by {
+  color: #a09c9c;
+}

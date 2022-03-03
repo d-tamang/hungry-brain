@@ -16,7 +16,7 @@ class Mouth {
   }
 
   moveLeft() {
-    if (this.x >= 10) {
+    if (this.x >= 20) {
       this.x -= 15;
     }
   }

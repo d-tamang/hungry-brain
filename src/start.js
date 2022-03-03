@@ -20,9 +20,9 @@ class Start {
     this.lCtx.fillText("Help feed him brainfood by", 85, 150);
     this.lCtx.fillText("solving these math problems.", 75, 190);
     this.lCtx.fillText("Use the left and right arrow keys", 55, 280);
-    this.lCtx.fillText("to move his mouth. Catch 10", 80, 320);
-    this.lCtx.fillText("correct numbers before his health", 50, 360);
-    this.lCtx.fillText("runs out to win!", 150, 400);
+    this.lCtx.fillText("to move his mouth. Get 10 points", 50, 320);
+    this.lCtx.fillText("to win! But be careful, Barry loses", 50, 360);
+    this.lCtx.fillText("health with every wrong number!", 50, 400);
     this.rCtx.fillText("Press here to start", 45, 400);
   }
 }
