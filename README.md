@@ -1,6 +1,6 @@
 ## Hungry Brain
 
-https://d-tamang.github.io/hungry-brain/
+[Click to Play!](https://d-tamang.github.io/hungry-brain/)
 
 ## Background
 
