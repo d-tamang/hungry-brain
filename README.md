@@ -4,7 +4,7 @@
 
 ## Background
 
-Hungry Brain is an addition math game for kids that helps enhance multitasking skills as users must focus on solving the equation whilst using the arrow keys to slide the mouth back and forth to both catch and avoid falling numbers. The objective is to "catch" the number that answers the equation on the right, wherein doing so will trigger a new problem to be randomly generated, and a new image of Brian the Brain to display. Correct answers increase points, and incorrect answers decrease health. Earn 10 points to win. Game is lost when the health counter reaches zero.
+Hungry Brain is a simple single-player math game for kids meant to enhance addition and multitasking skills. Players are instructed to use the left and right keyboard keys to move the mouth object and "eat" numbers falling from the top of the game board. The objective is to catch the number that solves the addition problem featured on the right under Brian the Brain. Every correct number caught renders a new equation, image of Brian, and positively increments the points counter. Every wrong answer negatively decrements Brian's health counter, ending the game as a loss when it reaches 0. Game is won when the player earns 10 points.
 
 ## Demo GIF
 
@@ -12,7 +12,7 @@ Hungry Brain is an addition math game for kids that helps enhance multitasking s
 
 ## Code Snippet
 
-Main game logic occurs in the Game class play method.
+The game is organized and rendered through a succession of class instances. The entry file starts a new start screen class, where it instanciates a new game class via a click handler event listener. The Game class instantiates the various game pieces, with the main gameplay logic occurring in the play method, as pictured below.
 
 ![](./src/assets/images/codesnippet.png)
 
@@ -24,5 +24,5 @@ Main game logic occurs in the Game class play method.
   - Webpack/Babel
   
  ## Future Additions
-  - Numerous difficulty levels featuring various different mathematical operations
-  - Incorporating different subjects beyond math in a quiz-style key-value matching game
+  - Multiple difficulty levels featuring various types of mathematical operations
+  - Incorporating different subjects beyond math in a quiz-style key-value pair matching game
