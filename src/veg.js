@@ -26,7 +26,7 @@ class Veg {
 
   update() {
     this.fall();
-    if (this.y >= this.canvas.height - 70) {
+    if (this.y === (this.canvas.height - 70)) {
       let positions = [20, 100, 180, 260, 340, 420];
       this.x = positions[Math.floor(Math.random() * positions.length)];
       this.y = 0;
