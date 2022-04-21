@@ -21,7 +21,7 @@ class Veg {
   }
 
   fall() {
-    this.y += 2;
+    this.y += 2.5;
   }
 
   update() {

@@ -35,7 +35,7 @@ class Game {
     let veggies = [this.veg1, this.veg2, this.veg3];
     for (let i = 0; i < veggies.length; i++) {
       let veg = veggies[i];
-      if (i === 0) {
+      if (i === 0 && veg.y === 0) {
         veg.num = this.brain.answer;
       }
       veg.update();
