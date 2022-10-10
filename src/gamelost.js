@@ -1,9 +1,10 @@
 class GameLost {
-  constructor(leftCtx, leftCanvas, rightCtx, rightCanvas) {
-    this.lCtx = leftCtx;
-    this.lCanvas = leftCanvas;
-    this.rCtx = rightCtx;
-    this.rCanvas = rightCanvas;
+  constructor(lCtx, lCanvas, rCtx, rCanvas, audio) {
+    this.lCtx = lCtx;
+    this.lCanvas = lCanvas;
+    this.rCtx = rCtx;
+    this.rCanvas = rCanvas;
+    this.audio = audio;
     this.loseImg = new Image();
     this.loseImg.src = "./src/assets/images/lose.jpg";
     this.loseSound = new Audio();
@@ -13,6 +14,7 @@ class GameLost {
   }
 
   renderLoseScreen() {
+    this.audio.pause();
     this.loseSound.play();
     this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);

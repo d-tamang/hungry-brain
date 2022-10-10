@@ -5,11 +5,12 @@ import GameWon from "./gamewon";
 import GameLost from "./gamelost";
 
 class Game {
-  constructor(leftCtx, leftCanvas, rightCtx, rightCanvas) {
-    this.lCtx = leftCtx;
-    this.lCanvas = leftCanvas;
-    this.rCtx = rightCtx;
-    this.rCanvas = rightCanvas;
+  constructor(lCtx, lCanvas, rCtx, rCanvas, audio) {
+    this.lCtx = lCtx;
+    this.lCanvas = lCanvas;
+    this.rCtx = rCtx;
+    this.rCanvas = rCanvas;
+    this.audio = audio;
     this.eatSound = new Audio();
     this.eatSound.src = "./src/assets/audio/eatsound.wav"
     let positions = [20, 100, 180, 260, 340, 420]
@@ -52,11 +53,11 @@ class Game {
       }
       if (this.brain.win >= 10) {
         cancelAnimationFrame(animate);
-        return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
+        return new GameWon(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas, this.audio);
       }
       if (this.brain.health <= 0) {
         cancelAnimationFrame(animate);
-        return new GameLost(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas);
+        return new GameLost(this.lCtx, this.lCanvas, this.rCtx, this.rCanvas, this.audio);
       }
     }
     const animate = requestAnimationFrame(this.play.bind(this));

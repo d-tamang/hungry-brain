@@ -1,9 +1,10 @@
 class GameWon {
-  constructor(leftCtx, leftCanvas, rightCtx, rightCanvas) {
-    this.lCtx = leftCtx;
-    this.lCanvas = leftCanvas;
-    this.rCtx = rightCtx;
-    this.rCanvas = rightCanvas;
+  constructor(lCtx, lCanvas, rCtx, rCanvas, audio) {
+    this.lCtx = lCtx;
+    this.lCanvas = lCanvas;
+    this.rCtx = rCtx;
+    this.rCanvas = rCanvas;
+    this.audio = audio;
     this.winGameImg = new Image();
     this.winGameImg.src = "./src/assets/images/wingame.jpg";
     this.winSound = new Audio();
@@ -13,6 +14,7 @@ class GameWon {
   }
 
   renderWinScreen() {
+    this.audio.pause();
     this.winSound.play();
     this.lCtx.clearRect(0, 0, this.lCanvas.width, this.lCanvas.height);
     this.rCtx.clearRect(0, 0, this.rCanvas.width, this.rCanvas.height);

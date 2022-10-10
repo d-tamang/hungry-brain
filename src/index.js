@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   rCanvas.addEventListener("click", () => {
     audio.play();
 
-    const game = new Game(lCtx, lCanvas, rCtx, rCanvas);
+    const game = new Game(lCtx, lCanvas, rCtx, rCanvas, audio);
 
     function keyDown(e) {
       e.preventDefault();
