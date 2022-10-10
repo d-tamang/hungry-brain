@@ -16,13 +16,11 @@ The game is organized and rendered through a succession of class instances. The 
 
 ![](./src/assets/images/codesnippet.png)
 
+window.requestAnimationFrame() is used to keep the vegetables falling (via the Veg class update method). The cycle stops when the player either earns 10 points, or loses 5 points, instanciating either the game won or lost class.
+
 ## Technologies Implemented
 
   - Vanilla JavaScript
   - HTML5 Canvas
   - CSS
   - Webpack/Babel
-  
- ## Future Additions
-  - Multiple difficulty levels featuring various types of mathematical operations
-  - Incorporating different subjects beyond math in a quiz-style key-value pair matching game
